@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   def home
-    if @user.nil?
-      @user = User.new
-    end
+    @user = User.new
   end
 
   def create
