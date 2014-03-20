@@ -2,9 +2,7 @@
 %h1 Fait corriger ton CV par des pro
 = form_for @user do |f|
 	%p
-		= fields_for :cv, @user.cv do |ff|
-			= ff.label :filename
-			= ff.file_field :filename
+		= f.file_field :cv
 	%p
 		= f.label :email
 		= f.text_field :email

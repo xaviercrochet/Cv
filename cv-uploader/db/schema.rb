@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320102216) do
+ActiveRecord::Schema.define(version: 20140320115921) do
 
   create_table "cvs", force: true do |t|
     t.string   "filename"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20140320102216) do
     t.string   "faculty"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cv_file_name"
+    t.string   "cv_content_type"
+    t.integer  "cv_file_size"
+    t.datetime "cv_updated_at"
   end
 
 end
