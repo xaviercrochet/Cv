@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     end
     if @user.errors.any?
       p @user.errors.full_messages
-      render 'home'
+      render :action => :home
     else
   	 redirect_to root_path
     end
