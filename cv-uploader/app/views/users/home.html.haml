@@ -1,21 +1,23 @@
-%h2
-	.text-center Tu es étudiant à l'UCL ?
-%h2 
-	.text-center Fait corriger ton CV par des pro
-
-.form-horizontal
-	= form_for@user, class: "form-horizontal" do |f|
-		= render 'error_messages', object: f.object
-		.form-group
-			= f.label :ton_cv, "TON CV", class: "col-sm-2 control-label"
-			.col-sm-10
-				= f.file_field :cv, class: "form-control"
-		.form-group
-			= f.label :mail, "MAIL", class: "col-sm-2 control-label"
-			.col-sm-10
-				= f.text_field :email, class: "form-control"
-		.form-group
-			= f.label :faculté, "FACULTÉ", class: "ccol-sm-2 control-label"
-			.col-sm-10
-				= f.text_field :faculty, class: "form-control"
-		= f.submit "Envoyer pour faire corriger", class:"btn btn-primary btn-lg btn-block"
+.span6.offset3
+	%h2
+		.text-center Tu es étudiant à l'UCL ?
+	%h2 
+		.text-center Fait corriger ton CV par des pro
+	.panel.panel-default
+		.panel-body
+			.form-horizontal
+				= form_for @user do |f|
+					= render 'error_messages', object: f.object
+					.control-group
+						= f.label :ton_cv, "TON CV", class: "control-label"
+						.controls
+							= f.file_field :cv
+					.control-group
+						= f.label :mail, "MAIL", class: "control-label"
+						.controls
+							= f.text_field :email
+					.control-group
+						= f.label :faculté, "FACULTÉ", class: "control-label"
+						.controls
+							= f.text_field :faculty
+					= f.submit "Envoyer pour faire corriger", class:"btn btn-primary btn-lg btn-block"
