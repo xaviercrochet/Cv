@@ -1,4 +1,11 @@
 CvUploader::Application.routes.draw do
+  get "users/home"
+  get "cvs/home"
+  get "landing_pages/home"
+  root "users#home"
+
+  resources :cvs
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

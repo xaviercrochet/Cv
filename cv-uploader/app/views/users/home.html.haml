@@ -1,0 +1,16 @@
+%h1 Tu es étudiant à l'UCL ?
+%h1 Fait corriger ton CV par des pro
+= form_for @user do |f|
+	%p
+		= fields_for :cv, @user.cv do |ff|
+			= ff.label :filename
+			= ff.file_field :filename
+	%p
+		= f.label :email
+		= f.text_field :email
+
+	%p
+		= f.label :faculty
+		= f.text_field :faculty
+	
+	= f.submit "Envoyer pour faire corriger"
