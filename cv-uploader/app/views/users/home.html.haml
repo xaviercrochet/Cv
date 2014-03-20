@@ -1,16 +1,32 @@
-%h1 Tu es étudiant à l'UCL ?
-%h1 Fait corriger ton CV par des pro
+%h1
+	.text-center Tu es étudiant à l'UCL ?
+%h1 
+	.text-center Fait corriger ton CV par des pro
 
-= form_for @user do |f|
-	= render 'error_messages', object: f.object
-	%p
-		= f.file_field :cv
-	%p
-		= f.label :email
-		= f.text_field :email
+.form-horizontal
+	= form_for @user do |f|
+		= render 'error_messages', object: f.object
+		.form-group
+			.col-sm-2.control-label
+				= f.label :ton_cv
+			.col-sm-10
+				.form-control
+					= f.file_field :cv
+		.form-group
+			.col-sm-2.control-label
+				= f.label :email
+			.col-sm-10
+				.form-control
+					= f.text_field :email
 
-	%p
-		= f.label :faculty
-		= f.text_field :faculty
-	
-	= f.submit "Envoyer pour faire corriger"
+		.form-group
+			.col-sm-2.control-label
+				= f.label :faculty
+			.col-sm-10
+				.form-control
+					= f.text_field :faculty
+
+		.form-group
+			.col-sm-offset-2.col-sm-10
+				.btn.btn-primary.btn-lg.btn-block
+					= f.submit "Envoyer pour faire corriger"
