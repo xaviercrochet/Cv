@@ -1,13 +1,25 @@
 class UsersController < ApplicationController
   def home
-  	@user = User.new
+    if @user.nil?
+      @user = User.new
+    end
   end
 
   def create
-  	@user = User.new(user_params)
-  	@user.save
-  	redirect_to root_path
+    @user = User.find_by_email(params[:user][:email])
+    if @user.nil?
+    	@user = User.create(user_params)
+    else
+      @user.update(user_params)
+    end
+    if @user.errors.any?
+      p @user.errors.full_messages
+      render 'home'
+    else
+  	 redirect_to root_path
+    end
   end
+
 
   private
 

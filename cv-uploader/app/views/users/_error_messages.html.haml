@@ -1,0 +1,5 @@
+- if object.errors.any?
+	%h2 Something went wrong when submiting the data ...
+	%ul
+		- @user.errors.full_messages.each do |msg|
+			%li= msg
