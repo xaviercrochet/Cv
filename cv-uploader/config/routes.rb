@@ -1,6 +1,6 @@
 CvUploader::Application.routes.draw do
-  get "users/home"
   root "users#home"
+  match '', to: 'user#home', via: 'get'
   resources :users
   
 end
