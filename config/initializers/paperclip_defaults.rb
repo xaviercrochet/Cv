@@ -1,0 +1,1 @@
+Paperclip::Attachment.default_options[:url] = 'ccicvs.s3-external-3.amazonaws.com'
