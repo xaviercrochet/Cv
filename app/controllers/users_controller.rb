@@ -7,8 +7,10 @@ class UsersController < ApplicationController
     @user = User.find_by_email(params[:user][:email])
     if @user.nil?
     	@user = User.create(user_params)
+      UserMailer.new_cv(@user).deliver
     else
       @user.update(user_params)
+      UserMailer.update_cv(@user).deliver
     end
     if @user.errors.any?
       p @user.errors.full_messages
