@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	
 
 
-	has_attached_file :cv, :path => "#{Rails.root}/data/:id/:filename"
+	has_attached_file :cv, :path => "data/:id/:filename"
 	validates_attachment :cv, content_type: { content_type: "application/pdf" }
 	
 
