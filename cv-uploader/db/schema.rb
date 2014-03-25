@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140320115921) do
 
-  create_table "cvs", force: true do |t|
-    t.string   "filename"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "cvs", ["user_id"], name: "index_cvs_on_user_id"
-
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "faculty"
