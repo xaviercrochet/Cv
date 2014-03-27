@@ -21,7 +21,9 @@
 				.form-group
 					= f.label :faculté, "FACULTÉ", class: "col-md-3 control-label"
 					.col-md-9
-						= f.text_field :faculty, class: "form-control"
+						-# = f.text_field :faculty, class: "form-control"
+
+						= collection_select(:user, :faculty_id, Faculty.all, :id, :abv, {}, {:class => 'form-control'})
 				
 				= f.submit "Envoyer pour faire corriger", class:"btn btn-primary btn-lg btn-block"
 

@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320115921) do
+ActiveRecord::Schema.define(version: 20140327153709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "faculties", force: true do |t|
+    t.string   "name"
+    t.string   "abv"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -25,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140320115921) do
     t.string   "cv_content_type"
     t.integer  "cv_file_size"
     t.datetime "cv_updated_at"
+    t.integer  "faculty_id"
   end
 
 end
