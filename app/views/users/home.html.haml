@@ -1,8 +1,9 @@
 
-%h2
+%h1{:style => 'margin-top: 50px;'}
 	.text-center Tu es étudiant à l'UCL ?
-%h2 
+%h2
 	.text-center Fait corriger ton CV par des pro
+%br
 .panel.panel-default
 	.panel-body
 		.form-horizontal
@@ -23,3 +24,11 @@
 						= f.text_field :faculty, class: "form-control"
 				
 				= f.submit "Envoyer pour faire corriger", class:"btn btn-primary btn-lg btn-block"
+
+%center
+	%p{:style => 'color: #FFFFFF;'}
+		Avec le soutient du
+		= link_to 'CIO', 'http://www.uclouvain.be/cio'
+
+	%p
+		= link_to image_tag("logokaps.png", height: '100'), 'http://www.kapuclouvain.be/'
