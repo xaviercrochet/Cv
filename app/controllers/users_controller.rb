@@ -14,7 +14,8 @@ class UsersController < ApplicationController
       p @user.errors.full_messages
       render :action => :home
     else
-      UserMailer.new_cv(@user).deliver  
+      UserMailer.new_cv(@user).deliver
+      flash[:notice] = "Votre cv a été enregistré :-)"  
   	  redirect_to root_path
     end
   end

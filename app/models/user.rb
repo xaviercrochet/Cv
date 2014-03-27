@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 		self.email = email.downcase
 		 }
 	VALID_EMAIL_REGEX = /\A\S+@.+\.\S+\z/
-	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX, message: "only allows string@string.string as email address" }
+	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX, message: " doit être de la forme foo@bar.foo" }
 	validates :faculty, presence: true, length: {maximum: 42}
 	validates :cv, presence: true
 	

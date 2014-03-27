@@ -8,6 +8,7 @@
 		.form-horizontal
 			= form_for @user do |f|
 				= render 'error_messages', object: f.object
+				= render 'success_message', notice: notice
 				.form-group
 					= f.label :ton_cv, "TON CV", class: "col-md-3 control-label"
 					.col-md-9
