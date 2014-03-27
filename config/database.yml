@@ -6,9 +6,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: cv_development
+  database: db/development
   pool: 5
-  username: juliendecoster
+  username: xavier
   password: 
 
 # Warning: The database defined as "test" will be erased and
