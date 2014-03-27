@@ -44,6 +44,8 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     erubis (2.7.0)
+    exceptional (2.0.33)
+      rack
     execjs (2.0.2)
     haml (4.0.5)
       tilt
@@ -138,6 +140,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   coffee-rails (~> 4.0.0)
+  exceptional
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
