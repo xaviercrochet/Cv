@@ -1,6 +1,6 @@
 - if object.errors.any?
 	.text-center
-		%h3 Something went wrong when submiting the data
+		%h3 Votre cv n'a pas été uploadé.
 	- @user.errors.full_messages.each do |msg|
 		.alert.alert-danger.alert-dismissable
 			%button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
