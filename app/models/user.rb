@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
 		 }
 	VALID_EMAIL_REGEX = /\A\S+@.+\.\S+\z/
 	validates :email, presence: true, format: {with: VALID_EMAIL_REGEX, message: " doit être de la forme foo@bar.foo" }
-	validates :faculty, presence: true, length: {maximum: 42}
 	validates :cv, presence: true
 	
 
