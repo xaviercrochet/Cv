@@ -12,8 +12,10 @@
 				= render 'success_message', notice: notice
 				.form-group
 					= f.label :ton_cv, "TON CV", class: "col-md-3 control-label"
+
 					.col-md-9
 						= f.file_field :cv
+						%p.help-block{:style => 'color: red;'} Le CV doit être au format PDF
 				.form-group
 					= f.label :mail, "MAIL", class: "col-md-3 control-label"
 					.col-md-9
