@@ -2,7 +2,7 @@
 %h1{:style => 'margin-top: 50px;'}
 	.text-center Tu es étudiant à l'UCL ?
 %h2
-	.text-center Fait corriger ton CV par des pro
+	.text-center Fais corriger ton CV par des pros
 %br
 .panel.panel-default
 	.panel-body
@@ -12,8 +12,10 @@
 				= render 'success_message', notice: notice
 				.form-group
 					= f.label :ton_cv, "TON CV", class: "col-md-3 control-label"
+
 					.col-md-9
 						= f.file_field :cv
+						%p.help-block{:style => 'color: red;'} Le CV doit être au format PDF
 				.form-group
 					= f.label :mail, "MAIL", class: "col-md-3 control-label"
 					.col-md-9
@@ -29,7 +31,7 @@
 
 %center
 	%p{:style => 'color: #FFFFFF;'}
-		Avec le soutient du
+		Avec le soutien du
 		= link_to 'CIO', 'http://www.uclouvain.be/cio'
 
 	%p
