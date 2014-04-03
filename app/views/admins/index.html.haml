@@ -1,31 +1,38 @@
-.col-md-8.col-md-offset-2
-	%h2 CV's enregistrés
-	%table.table.table-bordered
-		%thead
-			%tr
-				%th Email
-				%th Télécharger le cv
-				%th Statut
-				%th 
-		%tbody
-			- @users.each do |user|
-				%tr
-					%td{:style => 'color: #FFFFFF;'}
-						%h4.text-center 
-							= user.email
-					%td
-						= button_to "Télécharger", user.download_link, :class => "btn btn-primary btn-lg btn-block"
-						
-					%td
-						%h4.text-center
-							- if user.corrected
-								.span.label.label-success
-									Corrigé
-							- else
-								.span.label.label-danger
-									Non corrigé
-					%td
-						- if user.corrected?
-							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
-						- else 
-							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
+.col-md-9.col-md-offset-1
+	%h2.text-center CV's enregistrés
+	.panel.panel-default
+		.panel-body
+			%table.table.table-bordered
+				%thead
+					%tr
+						%th.text-center
+							Email
+						%th.text-center 
+							Télécharger le cv
+						%th.text-center 
+							Statut
+						%th.text-center
+							Action 
+				%tbody
+					- @users.each do |user|
+						%tr
+							
+							%td
+								%h4.text-center 
+									= user.email
+							%td
+								= button_to "Télécharger", user.download_link, :class => "btn btn-primary btn-lg btn-block"
+								
+							%td
+								%h4.text-center
+									- if user.corrected
+										.span.label.label-success
+											Corrigé
+									- else
+										.span.label.label-danger
+											Non corrigé
+							%td
+								- if user.corrected?
+									= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block", :disabled => true
+								- else 
+									= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
