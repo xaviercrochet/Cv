@@ -21,7 +21,7 @@
 								%h4.text-center 
 									= user.email
 							%td
-								= button_to "Télécharger", user.download_link, :class => "btn btn-primary btn-lg btn-block"
+								= button_to "Télécharger", user.download_link, :class => "btn btn-primary btn-lg btn-block", :method => 'get'
 								
 							%td
 								%h4.text-center

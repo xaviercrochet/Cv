@@ -1,3 +1,4 @@
+require 'open-uri'
 class User < ActiveRecord::Base
 
 	before_save { 
@@ -23,10 +24,9 @@ class User < ActiveRecord::Base
 	end
 
 	def download_link
-		"https://s3-eu-west-1.amazonaws.com/ccicvs/data/"+self.id.to_s+"/"+self.cv_file_name
+		URI.escape("https://s3-eu-west-1.amazonaws.com/ccicvs/data/"+self.id.to_s+"/"+self.cv_file_name)
 	end
 
-	#
 	def statut
 		if self.corrected
 			"Corrigé"
