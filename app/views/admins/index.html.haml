@@ -1,5 +1,5 @@
 .col-md-8.col-md-offset-2
-	%h1 This is the admin page!!!
+	%h2 CV's enregistrés
 	%table.table.table-bordered
 		%thead
 			%tr
@@ -10,10 +10,14 @@
 		%tbody
 			- @users.each do |user|
 				%tr
-					%td= user.email
-					%td= link_to 'Download', user.download_link
+					%td{:style => 'color: #FFFFFF;'}
+						%h4.text-center 
+							= user.email
 					%td
-						.text-center
+						= button_to "Télécharger", user.download_link, :class => "btn btn-primary btn-lg btn-block"
+						
+					%td
+						%h4.text-center
 							- if user.corrected
 								.span.label.label-success
 									Corrigé
@@ -22,6 +26,6 @@
 									Non corrigé
 					%td
 						- if user.corrected?
-							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block", :disabled => true
+							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
 						- else 
 							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
