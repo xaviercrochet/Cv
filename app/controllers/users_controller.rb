@@ -15,10 +15,18 @@ class UsersController < ApplicationController
       render :action => :home
     else
       UserMailer.new_cv(@user).deliver
-      flash[:success] = "Votre cv a été enregistré :-)"  
+      flash[:notice] = "Votre cv a été enregistré :-)"  
   	  redirect_to root_path
     end
   end
+
+  def mark
+    @user = User.find(params[:format])
+    @user.corrected = true
+    @user.save
+    redirect_to admins_path
+  end
+
 
 
   private

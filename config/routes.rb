@@ -4,6 +4,7 @@ CvUploader::Application.routes.draw do
   match '', to: 'user#home', via: 'get'
   resources :users
   resources :admins
+  match 'mark_user', to: 'users#mark', via: 'post'
 
 
   

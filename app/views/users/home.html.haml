@@ -1,38 +1,39 @@
 
-%h1{:style => 'margin-top: 50px;'}
-	.text-center Tu es étudiant à l'UCL ?
-%h2
-	.text-center Fais corriger ton CV par des pros
-%br
-.panel.panel-default
-	.panel-body
-		.form-horizontal
-			= form_for @user do |f|
-				= render 'error_messages', object: f.object
-				= render 'success_message', notice: notice
-				.form-group
-					= f.label :ton_cv, "TON CV", class: "col-md-3 control-label"
+.col-md-6.col-md-offset-3
+	%h1{:style => 'margin-top: 50px;'}
+		.text-center Tu es étudiant à l'UCL ?
+	%h2
+		.text-center Fais corriger ton CV par des pros
+	%br
+	.panel.panel-default
+		.panel-body
+			.form-horizontal
+				= form_for @user do |f|
+					= render 'error_messages', object: f.object
+					= render 'success_message', notice: notice
+					.form-group
+						= f.label :ton_cv, "TON CV", class: "col-md-3 control-label"
 
-					.col-md-9
-						= f.file_field :cv
-						%p.help-block{:style => 'color: red;'} Le CV doit être au format PDF
-				.form-group
-					= f.label :mail, "MAIL", class: "col-md-3 control-label"
-					.col-md-9
-						= f.text_field :email, class: "form-control", placeholder: "@student.uclouvain.be"
-				.form-group
-					= f.label :faculté, "FACULTÉ", class: "col-md-3 control-label"
-					.col-md-9
-						-# = f.text_field :faculty, class: "form-control"
+						.col-md-9
+							= f.file_field :cv
+							%p.help-block{:style => 'color: red;'} Le CV doit être au format PDF
+					.form-group
+						= f.label :mail, "MAIL", class: "col-md-3 control-label"
+						.col-md-9
+							= f.text_field :email, class: "form-control", placeholder: "@student.uclouvain.be"
+					.form-group
+						= f.label :faculté, "FACULTÉ", class: "col-md-3 control-label"
+						.col-md-9
+							-# = f.text_field :faculty, class: "form-control"
 
-						= collection_select(:user, :faculty_id, Faculty.all, :id, :abv, {}, {:class => 'form-control'})
-				
-				= f.submit "Envoyer pour faire corriger", class:"btn btn-primary btn-lg btn-block"
+							= collection_select(:user, :faculty_id, Faculty.all, :id, :abv, {}, {:class => 'form-control'})
+					
+					= f.submit "Envoyer pour faire corriger", class:"btn btn-primary btn-lg btn-block"
 
-%center
-	%p{:style => 'color: #FFFFFF;'}
-		Avec le soutien du
-		= link_to 'CIO', 'http://www.uclouvain.be/cio'
+	%center
+		%p{:style => 'color: #FFFFFF;'}
+			Avec le soutien du
+			= link_to 'CIO', 'http://www.uclouvain.be/cio'
 
-	%p
-		= link_to image_tag("logokaps.png", height: '100'), 'http://www.kapuclouvain.be/'
+		%p
+			= link_to image_tag("logokaps.png", height: '100'), 'http://www.kapuclouvain.be/'

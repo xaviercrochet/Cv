@@ -21,4 +21,17 @@ class User < ActiveRecord::Base
 	def self.get_by_email(email)
 		User.where(:email => email.downcase).first
 	end
+
+	def download_link
+		"https://s3-eu-west-1.amazonaws.com/ccicvs/data/"+self.id.to_s+"/"+self.cv_file_name
+	end
+
+	#
+	def statut
+		if self.corrected
+			"Corrigé"
+		else
+			"Non Corrigé"
+		end
+	end
 end
