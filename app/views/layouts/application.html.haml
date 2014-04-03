@@ -10,6 +10,12 @@
 			.navbar-header
 				.container-fluid{:style => 'padding: 5px 0px 0px 20px;'}
 					= link_to image_tag("logo-ccii-kot-emploi.png", height: '70'), root_path, class: 'brand'
+
+			.navbar-right
+				.container-fuid{:style => 'padding: 5px 20px 0px 20px;'}
+					- if admin_signed_in?
+						%h3
+							= link_to "Logout", destroy_admin_session_path, method: :delete
 		.container
 			.row
 				= yield

@@ -25,7 +25,3 @@
 							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block", :disabled => true
 						- else 
 							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
-					
-
-
-	%h3= link_to "Logout", destroy_admin_session_path, method: :delete
