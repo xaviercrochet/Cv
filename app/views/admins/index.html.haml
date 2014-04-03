@@ -21,7 +21,10 @@
 								.span.label.label-danger
 									Non corrigé
 					%td
-						= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
+						- if user.corrected?
+							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block", :disabled => true
+						- else 
+							= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
 					
 
 
