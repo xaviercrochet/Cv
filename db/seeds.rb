@@ -22,4 +22,5 @@ faculties = Faculty.create([
   {name: "École Polytechnique de Louvain", abv: 'EPL'},
   {name: "Faculté d'architecture, d'ingénierie architecturale, d'urbanisme", abv: 'LOCI'},
   {name: "Ingénierie biologique, agronomique et environnementale", abv: 'AGRO'}
+  {name: "Autres", abv: 'AUTRES'}
 ])
