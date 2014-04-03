@@ -27,6 +27,11 @@ class User < ActiveRecord::Base
 		URI.escape("https://s3-eu-west-1.amazonaws.com/ccicvs/data/"+self.id.to_s+"/"+self.cv_file_name)
 	end
 
+	def mark_as_corrected
+		self.corrected = true
+		self.save
+	end
+
 	def statut
 		if self.corrected
 			"Corrigé"

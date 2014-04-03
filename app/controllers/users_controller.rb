@@ -22,8 +22,7 @@ class UsersController < ApplicationController
 
   def mark
     @user = User.find(params[:format])
-    @user.corrected = true
-    @user.save
+    @user.mark_as_corrected
     redirect_to admins_path
   end
 
