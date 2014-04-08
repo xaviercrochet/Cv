@@ -8,4 +8,7 @@ class AdminsController < ApplicationController
 	def show_cv
 		@user = User.find(params[:id])
 	end
+
+	def send_mail
+	end
 end
