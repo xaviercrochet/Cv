@@ -10,5 +10,6 @@ class AdminsController < ApplicationController
 	end
 
 	def send_mail
+		redirect_to admins_path
 	end
 end
