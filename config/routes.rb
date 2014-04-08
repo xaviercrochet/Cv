@@ -5,6 +5,7 @@ CvUploader::Application.routes.draw do
   resources :users
   resources :admins
   match 'mark_user', to: 'users#mark', via: 'post'
+  get "correct/:id", to: "admins#show_cv", as: "correct"
 
 
   

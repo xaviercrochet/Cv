@@ -40,4 +40,4 @@
 								- if user.corrected?
 									= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block", :disabled => true
 								- else 
-									= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block"
+									= button_to "Corriger", correct_path(user), :class => "btn btn-primary btn-lg btn-block", :method => 'get'
