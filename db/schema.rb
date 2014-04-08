@@ -41,21 +41,6 @@ ActiveRecord::Schema.define(version: 20140403145232) do
     t.datetime "updated_at"
   end
 
-  create_table "requests", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "songs", force: true do |t|
-    t.string   "title"
-    t.string   "artist"
-    t.integer  "request_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "songs", ["request_id"], name: "index_songs_on_request_id", using: :btree
-
   create_table "users", force: true do |t|
     t.string   "email"
     t.datetime "created_at"
