@@ -12,6 +12,7 @@ class AdminsController < ApplicationController
 	def send_mail
 		@user = User.find(params[:id])
 		UserMailer.correct(@user, current_admin.email, params[:q]).deliver
+		@user.mark_as_corrected
 		redirect_to admins_path
 	end
 end
