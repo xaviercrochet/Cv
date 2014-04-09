@@ -2,6 +2,11 @@
 	%h2.text-center
 		CV de
 		= @user.email
+
+	.alert.alert-info.alert-dismissable
+		%button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+		Si le cv ne s'affiche pas correctement, veuillez actualiser la page.
+
 	%iframe{:height => "780", :src => @user.display_link, :style => "border: none;", :width => "600"}
 
 
