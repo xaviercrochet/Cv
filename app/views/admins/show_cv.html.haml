@@ -11,10 +11,10 @@
 	%br
 	.panel.panel-default
 		.panel-body
-			= form_tag("/send_mail", method: "get") do
+			= form_tag(send_mail_path(@user), method: "get") do
 				.form-control
 					= label_tag(:q, "Corrections")
-				%textarea.form-control{:rows => "3"}
+				= text_area_tag :q, nil, :rows => 5, class: 'form-control'
 				= submit_tag "Envoyer la correction", class: "btn btn-default"
 
 	%h3

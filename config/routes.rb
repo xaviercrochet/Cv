@@ -7,7 +7,7 @@ CvUploader::Application.routes.draw do
   match 'mark_user', to: 'users#mark', via: 'post'
   get "correct/:id", to: "admins#show_cv", as: "correct"
 
-  match 'send_mail', to: "admins#send_mail", via: "get"
+  get "send_mail/:id", to: "admins#send_mail", as: "send_mail"
 
 
   
