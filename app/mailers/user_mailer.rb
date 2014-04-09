@@ -1,4 +1,5 @@
 class UserMailer < ActionMailer::Base
+	default from: "contact.ci.industries@gmail.com"
 
 	def new_cv(user)
 		@user = user
