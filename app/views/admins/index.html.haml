@@ -9,6 +9,8 @@
 							Email
 						%th.text-center
 							Faculté
+						%th.text-center
+							Date de soumission
 						%th.text-center 
 							Télécharger le cv
 						%th.text-center 
@@ -25,6 +27,8 @@
 							%td
 								%h4.text-center
 									= user.faculty.abv
+							%td
+								= user.updated_at
 							%td
 								= button_to "Télécharger", user.download_link, :class => "btn btn-primary btn-lg btn-block", :method => 'get'
 								
