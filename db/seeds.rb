@@ -7,6 +7,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Faculty.delete_all
+ActiveRecord::Base.connection.reset_pk_sequence!('faculties')
+
 faculties = Faculty.create([
   {name: "Faculté de théologie", abv: 'TECO'},
   {name: "Faculté de droit et de criminologie", abv: 'DRT'},
@@ -21,6 +24,9 @@ faculties = Faculty.create([
   {name: "Faculté des Sciences", abv: 'SC'},
   {name: "École Polytechnique de Louvain", abv: 'EPL'},
   {name: "Faculté d'architecture, d'ingénierie architecturale, d'urbanisme", abv: 'LOCI'},
-  {name: "Ingénierie biologique, agronomique et environnementale", abv: 'AGRO'}
-  {name: "Autres", abv: 'AUTRES'}
+  {name: "Ingénierie biologique, agronomique et environnementale", abv: 'AGRO'},
+  {name: "Autres", abv: 'AUTRES'},
+  {name: "Ecole de Communication", abv: "COMU"},
+  {name: "Economics School of Louvain", abv: "ECON"},
+  {name: "Ecole des Sciences politiques et sociales", abv: "PSAD"}
 ])
