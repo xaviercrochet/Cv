@@ -1,47 +1,44 @@
 .col-md-10.col-md-offset-1
-	%h2.text-center CV's enregistrés
-	.panel.panel-default
-		.panel-body
-			%table.table.table-bordered
-				%thead
-					%tr
-						%th.text-center
-							Email
-						%th.text-center
-							Faculté
-						%th.text-center
-							Date de soumission
-						%th.text-center 
-							Télécharger le cv
-						%th.text-center 
-							Statut
-						%th.text-center
-							Action 
-				%tbody
-					- @users.each do |user|
-						%tr
-							
-							%td
-								%h4.text-center 
-									= user.email
-							%td
-								%h4.text-center
-									= user.faculty.abv
-							%td
-								= user.updated_at
-							%td
-								= button_to "Télécharger", user.download_link, :class => "btn btn-primary btn-lg btn-block", :method => 'get'
-								
-							%td
-								%h4.text-center
-									- if user.corrected
-										.label.label-success
-											Corrigé
-									- else
-										.label.label-danger
-											Non corrigé
-							%td
-								- if user.corrected?
-									= button_to "Corriger", mark_user_path(user), :class => "btn btn-primary btn-lg btn-block", :disabled => true
-								- else 
-									= button_to "Corriger", correct_path(user), :class => "btn btn-primary btn-lg btn-block", :method => 'get'
+    %h2.text-center CV's enregistrés
+    .panel.panel-default
+        .panel-body
+            %table.table.table-bordered
+                %thead
+                    %tr
+                        %th.text-center
+                            Email
+                        %th.text-center
+                            Faculté
+                        %th.text-center
+                            Date de soumission
+                        %th.text-center 
+                            Télécharger le cv
+                        %th.text-center 
+                            Statut
+                        %th.text-center
+                            Action 
+                %tbody
+                    - @users.each do |user|
+                        %tr
+                            
+                            %td
+                                = user.email
+                            %td
+                                = user.faculty.abv
+                            %td
+                                = l user.updated_at, format: :long
+                            %td
+                                = button_to "Télécharger", user.download_link, :class => "btn btn-primary", :method => 'get'
+                                
+                            %td
+                                - if user.corrected
+                                    .label.label-success
+                                        Corrigé
+                                - else
+                                    .label.label-danger
+                                        Non corrigé
+                            %td
+                                - if user.corrected?
+                                    = button_to "Corriger", mark_user_path(user), :class => "btn btn-primary", :disabled => true
+                                - else 
+                                    = button_to "Corriger", correct_path(user), :class => "btn btn-primary", :method => 'get'

@@ -2,7 +2,7 @@ class AdminsController < ApplicationController
 	  before_action :authenticate_admin!
 
 	def index
-		@users = User.all
+		@users = User.all.order("updated_at DESC")
 	end
 
 	def show_cv
